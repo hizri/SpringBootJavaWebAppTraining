@@ -1,0 +1,24 @@
+	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="webjars/bootstrap-datepicker/1.0.1/js/bootstrap-datepicker.js"></script>
+	<script>
+		$('#targetDate').datepicker({
+			format : 'dd/mm/yyyy'
+		});
+	</script>
+	<script>
+		var home = document.querySelectorAll('nav li a[href="/"]')[0];
+		var todo = document.querySelectorAll('nav li a[href="/list-todos"]')[0];
+		var urlArray = document.URL.split("/");
+		var currentSection = urlArray[urlArray.length - 1];
+		console.log("current section " + currentSection);
+		if (currentSection.indexOf("todo") !== -1) {
+			home.parentElement.classList.remove("active");
+			todo.parentElement.classList.add("active");
+		} else {
+			todo.parentElement.classList.remove("active");
+			home.parentElement.classList.add("active");
+		}
+	</script>
+</body>
+</html>
